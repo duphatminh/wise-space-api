@@ -1,0 +1,20 @@
+{
+  "name": "wise-space-api",
+  "version": "1.0.0",
+  "description": "APIs for Wise Space App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duphatminh/wise-space-api.git"
+  },
+  "keywords": [],
+  "author": "duphatminh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duphatminh/wise-space-api/issues"
+  },
+  "homepage": "https://github.com/duphatminh/wise-space-api#readme"
+}
