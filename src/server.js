@@ -1,16 +1,23 @@
 import express from 'express'
-import { connectDB } from './config/mongodb.js'
-import { mapOrder } from './utilities/sorts.js'
-import { env } from './config/environment'
+import { connectDB } from '*/config/mongodb'
+import { env } from '*/config/environment'
+import { BoardModel } from '*/models/Board.model'
 
-const app = express()
+connectDB()
+    .then(() => console.log('Connect successfully to database server!'))
+    .then(() => bootServer())
+    .catch(error => {
+        console.error(error)
+        process.exit(1)
+    })
 
-connectDB().catch(console.log)
+const bootServer = () => {
+    const app = express()
 
-app.get('/',(reg, res) => {
-    res.end('<h1>Hello World</h1><hr/>')
-}) 
-
-app.listen(env.PORT,env.HOST, () => {
-    console.log('Hello ',env.HOST+':'+env.PORT)
-})
+    app.get('/test', async (reg, res) => {
+        res.end('<h1>Hello World</h1><hr/>')
+    }) 
+    app.listen(env.APP_PORT,env.APP_HOST, () => {
+        console.log('Hello',env.APP_HOST+':'+env.APP_PORT)
+    })
+}
