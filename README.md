@@ -1,4 +1,4 @@
-## Node.js + Expressjs + MongoDB - Building an API for Wise Space app
+## Node.js + Expressjs + MongoDB - Building an API for Wise Space App
 
 ## Requirements
 
