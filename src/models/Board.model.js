@@ -1,5 +1,8 @@
 import Joi from 'joi'
 import { getDB } from '*/config/mongodb'
+import { ObjectID } from 'mongodb'
+import { ColumnModel } from './Column.model'
+import { CardModel } from './Card.Model'
 
 // Định nghĩa Board Collection
 const boardCollectionName = 'boards'
@@ -24,5 +27,55 @@ const createNew = async (data) => {
         throw new Error(error)
     }
 }
+/**
+ * @param {string} boardId 
+ * @param {string} columnId 
+ */
+const pushColumnOrder = async (boardId, columnId) => {
+    try {
+        const result = await getDB().collection(boardCollectionName).findOneAndUpdate(
+            { _id: ObjectID(boardId) },
+            { $push: { columnOrder: columnId } },
+            { returnOriginal: false } 
+        )
 
-export const BoardModel = { createNew }
+        return result.value
+    } catch (error) {
+        throw new Error(error)
+    }
+}
+
+const getFullBoard = async (boardId) => {
+    try {
+        const result = await getDB().collection(boardCollectionName).aggregate([
+            { $match: { _id: ObjectID(boardId) } },
+            // {
+            //     $addFields: {
+            //         _id: { $toString: '$_id'}
+            //     }
+            // },
+            { $lookup: {
+                from: ColumnModel.columnCollectionName, 
+                localField: '_id',
+                foreignField: 'boardId',
+                as: 'columns'
+            }},
+            { $lookup: {
+                from: CardModel.cardCollectionName,
+                localField: '_id',
+                foreignField: 'boardId',
+                as: 'cards'
+            }}
+        ]).toArray()
+        
+        return result[0] || {}
+    } catch (error) {
+        throw new Error(error)
+    }
+}
+
+export const BoardModel = { 
+    createNew,
+    pushColumnOrder,
+    getFullBoard,
+}
