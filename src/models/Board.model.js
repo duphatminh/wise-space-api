@@ -15,7 +15,7 @@ const boardCollectionSchema = Joi.object({
 })
 
 const validateSchema = async (data) => {
-    return await boardCollectionSchema.validateAsync(data, { abortEarly: false}) 
+    return await boardCollectionSchema.validateAsync(data, { abortEarly: false})
 }
 
 const createNew = async (data) => {
@@ -67,7 +67,7 @@ const getFullBoard = async (boardId) => {
                 as: 'cards'
             }}
         ]).toArray()
-        
+
         return result[0] || {}
     } catch (error) {
         throw new Error(error)
