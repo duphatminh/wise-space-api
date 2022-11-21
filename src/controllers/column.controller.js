@@ -22,7 +22,7 @@ const update = async(req, res) => {
          errors: error.message
      })
     }
- }
+}
 
 export const ColumnController = { 
     createNew,

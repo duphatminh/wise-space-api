@@ -27,6 +27,21 @@ const createNew = async (data) => {
         throw new Error(error)
     }
 }
+const update = async (id,data) => {
+    try {
+        const updateData = {
+            ...data
+        }
+        const result = await getDB().collection(boardCollectionName).findOneAndUpdate(
+            { _id: ObjectID(id) },
+            { $set: updateData },
+            { returnOriginal: false } //Trả về bản ghi sau khi update
+        )
+        return result.value
+    } catch (error) {
+        throw new Error(error)
+    }
+}
 /**
  * @param {string} boardId 
  * @param {string} columnId 
@@ -75,6 +90,7 @@ const getFullBoard = async (boardId) => {
 
 export const BoardModel = { 
     createNew,
+    update,
     pushColumnOrder,
     getFullBoard,
 }
