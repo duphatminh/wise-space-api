@@ -12,4 +12,5 @@
 $ git clone https://git_url_clone <project_dir>
 $ cd <project_dir>
 $ node folder_name/file_name.js
+$ (recommend) npm run dev 
 ```
