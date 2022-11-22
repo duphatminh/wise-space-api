@@ -9,5 +9,5 @@ export const HttpStatusCode = {
 
 export const WHITELIST_DOMAINS = [
     'http://localhost:3000',
-    'http://localhost:3001'
+    'https://wise-space-app.web.app'
 ]
