@@ -1,8 +1,8 @@
 import Joi from 'joi'
 import { getDB } from '*/config/mongodb'
 import { ObjectID } from 'mongodb'
-import { ColumnModel } from './Column.model'
-import { CardModel } from './Card.model'
+import { ColumnModel } from 'D:/Wise Space App/wise-space-api/build/src/models/Column.model'
+import { CardModel } from 'D:/Wise Space App/wise-space-api/build/src/models/Card.Model.js'
 
 // Định nghĩa Board Collection
 const boardCollectionName = 'boards'
