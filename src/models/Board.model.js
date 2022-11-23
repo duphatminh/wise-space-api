@@ -3,7 +3,7 @@ import { getDB } from '../config/mongodb'
 import { ObjectID } from 'mongodb'
 
 import { ColumnModel } from "./Column.model"
-import { CardModel } from "./card.model"
+import { CardModel } from "./card.Model"
 
 // Định nghĩa Board Collection
 const boardCollectionName = 'boards'
