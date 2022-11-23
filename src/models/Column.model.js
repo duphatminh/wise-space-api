@@ -1,6 +1,6 @@
 import Joi from 'joi'
 import { ObjectID } from 'mongodb'
-import { getDB } from '*/config/mongodb'
+import { getDB } from '../config/mongodb'
 
 // Định nghĩa Column Collection
 const columnCollectionName = 'columns'
