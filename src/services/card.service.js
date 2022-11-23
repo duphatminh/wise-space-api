@@ -1,5 +1,5 @@
 import { CardModel } from '*/models/card.model'
-import { ColumnModel } from '*/models/column.model'
+import { ColumnModel } from '*/models/Column.model'
 
 const createNew = async (data) => {
     try {

@@ -2,7 +2,7 @@ import Joi from 'joi'
 import { getDB } from '../config/mongodb'
 import { ObjectID } from 'mongodb'
 
-import { ColumnModel } from "./column.model"
+import { ColumnModel } from "./Column.model"
 import { CardModel } from "./card.model"
 
 // Định nghĩa Board Collection
