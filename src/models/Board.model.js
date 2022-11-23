@@ -2,8 +2,8 @@ import Joi from 'joi'
 import { getDB } from '*/config/mongodb'
 import { ObjectID } from 'mongodb'
 
-import { ColumnModel } from './Column.model'
-import { CardModel } from './Card.model'
+import { ColumnModel } from "./Column.model"
+import { CardModel } from "./Card.model"
 
 // Định nghĩa Board Collection
 const boardCollectionName = 'boards'
