@@ -1,4 +1,4 @@
-import { BoardModel } from '*/models/board.model'
+import { BoardModel } from '../models/board.model'
 import { cloneDeep } from 'lodash'
 
 const createNew = async (data) => {
