@@ -1,6 +1,6 @@
 import { ColumnModel } from '*/models/Column.model'
 import { BoardModel } from '*/models/Board.model'
-import { CardModel } from '*/models/Cards.Model'
+import { CardModel } from '*/models/Cards.model'
 
 const createNew = async (data) => {
     try {
